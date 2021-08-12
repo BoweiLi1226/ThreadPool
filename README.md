@@ -1,2 +1,2 @@
-# ThreadPoolC-
+# ThreadPoolC
 A C++ thread pool
