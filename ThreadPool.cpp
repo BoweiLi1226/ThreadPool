@@ -22,11 +22,11 @@ ThreadPool::ThreadPool(size_t thread_count) : data_(std::make_shared<data>()) {
 }
 
 ThreadPool::~ThreadPool() {
-        if ((bool) data_) {
-        {
-            std::lock_guard<std::mutex> lk(data_->mtx_);
-            data_->is_shutdown_ = true;
-        }
-        data_->cond_.notify_all();
-        }
+    if ((bool) data_) {
+    {
+        std::lock_guard<std::mutex> lk(data_->mtx_);
+        data_->is_shutdown_ = true;
     }
+    data_->cond_.notify_all();
+    }
+}
